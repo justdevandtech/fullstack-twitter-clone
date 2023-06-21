@@ -55,7 +55,7 @@ cd backend-twitter-clone
   DATABASE_URL=your-postgres-uri
   JWT_SECRET_KEY=your-jwt-secret
   ```
-- Replace `your-mongodb-uri` with the connection string to your MongoDB database.
+- Replace `your-postgres-uri` with the connection string to your MongoDB database.
 - Replace `your-jwt-secret` with a secret key for JWT token generation.
   
 ## Start the backend server:
