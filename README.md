@@ -2,6 +2,14 @@
 
 This is a fullstack Twitter clone project built using modern web technologies. The goal of this project is to replicate the core functionality of Twitter, allowing users to create accounts, post tweets, follow other users, and engage with their content.
 
+![ttt---1](https://github.com/ophicial-pauloski/fullstack-twitter-clone/assets/57170298/defcf416-cbdb-4b69-a5ef-92acc34c9b1c)
+
+![ttt--2](https://github.com/ophicial-pauloski/fullstack-twitter-clone/assets/57170298/44406dc7-fd2b-4efc-848b-45f603e1171a)
+![tt---3](https://github.com/ophicial-pauloski/fullstack-twitter-clone/assets/57170298/39a7e2b1-1007-430b-a4d9-bd645d21c576)
+
+
+
+
 ## Features
 
 - User registration and authentication
