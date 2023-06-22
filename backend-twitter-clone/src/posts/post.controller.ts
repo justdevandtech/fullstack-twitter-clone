@@ -2,14 +2,14 @@ import { Request, Response } from 'express';
 import prisma from '../prisma';
 
 interface _Request extends Request {
-  user: {
+  user?: {
     id: string;
   };
 }
 
 async function createPosthandler(req: _Request, res: Response) {
   const postInput = req.body;
-  const userId = req.user.id;
+  const userId = req.user?.id;
 
   try {
     const post = await prisma.post.create({
@@ -135,7 +135,7 @@ async function likePostHandler(req: _Request, res: Response) {
     });
 
     let updatedLikedIds = [...(post?.likedIds || [])];
-    updatedLikedIds.push(currentUserId);
+    updatedLikedIds.push(currentUserId as string);
 
     const updatedPost = await prisma.post.update({
       where: {
@@ -253,7 +253,7 @@ async function postCommentHandler(req: _Request, res: Response) {
     const comment = await prisma.comment.create({
       data: {
         body,
-        userId: userId,
+        userId: userId as string,
         postId,
       },
     });

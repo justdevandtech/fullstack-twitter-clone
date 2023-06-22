@@ -2,14 +2,14 @@ import { Request, Response } from 'express';
 import prisma from '../prisma';
 import { User } from '@prisma/client';
 
-interface UserRequestProps extends Request {
-  user: {
+interface UserRequest extends Request {
+  user?: {
     id: string;
   };
 }
 
-async function getMe(req: UserRequestProps, res: Response) {
-  const id = req.user.id;
+async function getMe(req: UserRequest, res: Response) {
+  const id = req.user?.id;
 
   try {
     const me = await prisma.user.findUnique({ where: { id } });
@@ -26,7 +26,7 @@ async function getMe(req: UserRequestProps, res: Response) {
   }
 }
 
-async function getUserById(req: UserRequestProps, res: Response) {
+async function getUserById(req: Request, res: Response) {
   const { userId } = req.params;
   try {
     const user = await prisma.user.findUnique({
@@ -89,7 +89,7 @@ async function updateUserProfile(req: Request, res: Response) {
   }
 }
 
-async function getAllUsers(req: Request, res: Response) {
+async function getAllUsers(_: any, res: Response) {
   try {
     const users = await prisma.user.findMany({
       orderBy: {
@@ -109,7 +109,7 @@ async function getAllUsers(req: Request, res: Response) {
   }
 }
 
-async function followUserHandler(req: UserRequestProps, res: Response) {
+async function followUserHandler(req: Request, res: Response) {
   const { followerId } = req.body;
 
   try {
@@ -168,7 +168,7 @@ async function followUserHandler(req: UserRequestProps, res: Response) {
   }
 }
 
-async function unfollowUserHandler(req: UserRequestProps, res: Response) {
+async function unfollowUserHandler(req: UserRequest, res: Response) {
   const followerId = req.user?.id;
 
   try {
