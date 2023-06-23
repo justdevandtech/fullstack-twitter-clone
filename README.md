@@ -63,7 +63,7 @@ cd backend-twitter-clone
   DATABASE_URL=your-postgres-uri
   JWT_SECRET_KEY=your-jwt-secret
   ```
-- Replace `your-postgres-uri` with the connection string to your MongoDB database.
+- Replace `your-postgres-uri` with the connection string to your postgreSQL database.
 - Replace `your-jwt-secret` with a secret key for JWT token generation.
   
 ## Start the backend server:
@@ -82,6 +82,6 @@ cd frontend-twitter-clone
 - Replace `http://localhost:8000/api/v1` with the URL where your backend server is running on.
 
 ## Start the frontend development server:
-``npm install` or `yarn install`
+``npm run dev` or `yarn dev`
 
 ##  Open your browser and navigate to `http://localhost:3000` to see the application in action.
