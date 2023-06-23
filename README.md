@@ -43,7 +43,7 @@ This is a fullstack Twitter clone project built using modern web technologies. T
 ### Deployment
 
 - Railway App for hosting the backend
-- Netlify for hosting the frontend
+- Netlify/Vercel for hosting the frontend
 
 ## Installation
 
